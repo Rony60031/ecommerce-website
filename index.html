@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase | Online Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="brand">ShopEase</a>
+    <input id="search" type="search" placeholder="Search products..." aria-label="Search products">
+    <button id="cart-btn" class="cart-btn" aria-label="Open cart">Cart <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Everything you need, in one place</h1>
+      <p>Browse the catalog, filter by category, and build your cart.</p>
+    </section>
+
+    <section class="controls">
+      <label>Category
+        <select id="category"></select>
+      </label>
+      <label>Sort by
+        <select id="sort">
+          <option value="default">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="name">Name (A-Z)</option>
+        </select>
+      </label>
+      <span id="result-count" class="muted"></span>
+    </section>
+
+    <section id="products" class="grid" aria-live="polite"></section>
+  </main>
+
+  <div id="overlay" class="overlay"></div>
+  <aside id="cart-panel" class="cart-panel" aria-hidden="true" aria-label="Shopping cart">
+    <div class="cart-head">
+      <h2>Your Cart</h2>
+      <button id="cart-close" class="btn">Close</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-foot">
+      <div class="total-row"><span>Total</span><strong id="cart-total">$0.00</strong></div>
+      <button id="checkout" class="btn primary">Checkout</button>
+      <button id="clear" class="btn">Clear cart</button>
+      <p id="message" class="message" role="status"></p>
+    </div>
+  </aside>
+
+  <footer>
+    <p>&copy; <span id="year"></span> ShopEase. Demo project: no real payments are processed.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
